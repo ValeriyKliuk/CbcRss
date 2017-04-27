@@ -17,6 +17,9 @@ class Utils {
         var result = description.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
         /// find index of the end '.jpg'
         var index = result.range(of: to, options: .backwards)?.upperBound
+        if index == nil { //oops :)
+            index = result.range(of: to.uppercased(), options: .backwards)?.upperBound
+        }
         /// cut anything to index
         result = result.substring(to: index!)
         /// find index of the start "<img src='"
