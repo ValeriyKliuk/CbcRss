@@ -17,7 +17,7 @@ class RSSTableViewCell: UITableViewCell {
     
     /// configure cell
     func configure(title: String, author: String, pubDate: String, imgLink: String) {
-        self.contentLabel.text = "\(title)\n\(author)\n\(pubDate)"
+        self.contentLabel.text = "\(title)\n\(pubDate)\n\(author)"
 
         DispatchQueue.global(qos: .background).async { [weak self]() -> Void in
             let url = URL(string: imgLink)!
